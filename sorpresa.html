@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorpresa</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-image: url(img/tulipanes.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: 'Arial', sans-serif;
+            color: white;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px #000;
+            animation: fadeIn 3s ease-in-out forwards;
+            opacity: 0;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .gallery {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            width: 100%; /* Cambia el ancho para que ocupe el 100% de la pantalla */
+            max-width: 600px; /* Limita el ancho máximo en pantallas más grandes */
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Estilos específicos para pantallas más pequeñas */
+        @media (max-width: 600px) {
+            .message {
+                font-size: 1.8rem; /* Reduce el tamaño del texto en móviles */
+            }
+            .gallery {
+                gap: 10px; /* Reduce el espacio entre las imágenes en móviles */
+            }
+            .gallery img {
+                border-radius: 5px; /* Un borde más suave en móviles */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="message">Te quiero mucho, maimor</div>
+
+    <!-- Galería de fotos -->
+    <div class="gallery">
+        <img src="img/1.jpeg" alt="Foto 1">
+        <img src="img/2.jpeg" alt="Foto 2">
+        <img src="img/3.jpeg" alt="Foto 3">
+    </div>
+</body>
+</html>
